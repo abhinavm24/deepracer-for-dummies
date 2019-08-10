@@ -12,7 +12,8 @@ echo 'waiting for containers to start up...'
 sleep 15
 
 echo 'attempting to pull up sagemaker logs...'
-gnome-terminal -x sh -c "!!; docker logs -f $(docker ps | awk ' /sagemaker/ { print $1 }')"
+#gnome-terminal -x sh -c "!!; docker logs -f $(docker ps | awk ' /sagemaker/ { print $1 }')"
+docker logs -f $(docker ps | awk ' /sagemaker/ { print $1 }')
 
-echo 'attempting to open vnc viewer...'
-gnome-terminal -x sh -c "!!; vncviewer localhost:8080"
+#echo 'attempting to open vnc viewer...'
+#gnome-terminal -x sh -c "!!; vncviewer localhost:8080"
